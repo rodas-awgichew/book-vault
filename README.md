@@ -1,51 +1,140 @@
-# Weekend Challenge: The Personal Book Vault 📚
+# 📚 Personal Book Vault
 
-## Overview
-This weekend, you will build **The Personal Book Vault**, a mini-application that allows users to manage a personal collection of books. This project is designed to test your ability to integrate **Zustand** for global state, **TanStack Router** for navigation, and **React Hooks** for local logic—**without** the complexity of external API calls.
+A modern React application that allows users to manage their personal book collection. Users can browse available books, add them to their vault, track reading progress, and organize their collection with search and filtering features.
+
+---
+
+## 🚀 Live Demo
+
+👉 CodeSandbox Deployment: https://y23rpx-5173.csb.app/
+
+---
+
+## 📌 Overview
+
+The **Personal Book Vault** is a client-side application built to demonstrate modern React architecture and state management patterns. It focuses on clean separation of concerns, efficient state handling, and scalable UI design.
+
+Users can:
+
+* Browse a predefined list of books
+* Add books to a personal vault
+* Update reading status (Unread, Reading, Completed)
+* Remove books from their collection
+* Search and filter books dynamically
+* Persist their data across sessions
 
 ---
 
 ## 🛠 Tech Stack
+
 * **Framework:** React (Vite + TypeScript)
 * **Routing:** TanStack Router
-* **State Management:** Zustand
-* **Styling:** Tailwind CSS
-* **Data:** A local JSON file or constant array of books.
+* **State Management:** Zustand (with persistence)
+* **Styling:** Tailwind CSS (Dark theme UI)
+* **Data Source:** Local static dataset
 
 ---
 
-## 🎯 Functional Requirements
+## 🧠 Key Concepts Implemented
 
-### 1. Navigation (TanStack Router)
-Implement a file-based router with the following structure:
-* **`/` (Home):** A dashboard displaying your reading statistics (e.g., "You have 5 books in your vault, 2 are marked as Read").
-* **`/browse`:** A page to view a pre-defined list of available books and add them to your vault.
-* **`/vault`:** A list of all books you have saved, with options to remove them or toggle their "Read" status.
+### 1. Global State Management
 
-### 2. Global State (Zustand)
-Create a centralized store to manage your collection. Your store should include:
-* `vault`: An array of book objects (Title, Author, CoverImage, ID, isRead).
-* `addToVault(book)`: Adds a book from the browse list to your personal vault.
-* `removeFromVault(id)`: Removes a book from the vault.
-* `toggleRead(id)`: Flips the `isRead` status of a specific book.
+* Centralized store using Zustand
+* Clean separation between state and UI
+* Actions for controlled state updates
 
-### 3. Data Persistence
-Use the Zustand **persist middleware** so that your vault remains intact even after a page refresh.
+### 2. Derived State
 
----
+* Reading statistics (total, completed, reading) are computed dynamically
+* Avoids redundant and inconsistent state
 
-## 💡 Pro-Tips
-* **Zustand Selectors:** Use selectors like `const vault = useBookStore((s) => s.vault)` to ensure components only re-render when necessary.
-* **Derived State:** Don't store "totalReadCount" in the state. Instead, calculate it on the fly in your component or via a getter in the store to keep your state "source of truth" clean.
-* **Empty States:** Make sure the `/vault` page looks good even when no books have been added yet.
+### 3. Routing as Application State
 
----
+* Multi-page navigation using TanStack Router
+* Structured route hierarchy for scalability
 
-## 📖 Recommended Resources
-* **Zustand Persist:** [Persisting Store Data](https://docs.pmnd.rs/zustand/integrations/persisting-store-data)
-* **TanStack Router:** [File-based Routing Guide](https://tanstack.com/router/v1/docs/guide/file-based-routing)
-* **TypeScript:** [Object Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+### 4. Component-Based Architecture
+
+* Reusable UI components (BookCard, SearchBar, FilterBar, etc.)
+* Clear separation of UI and logic
+
+### 5. Data Persistence
+
+* Zustand persist middleware used to store data in localStorage
+* User data remains after page refresh
 
 ---
 
-> **Submission:** Push your code to a GitHub repository. Then create a sandbox to spin up and see your project easily on [CodeSandbox](https://codesandbox.io)
+## 📂 Project Structure
+
+```
+src/
+  app/
+    router.tsx
+
+  components/
+    BookCard.tsx
+    SearchBar.tsx
+    FilterBar.tsx
+    StatsCard.tsx
+    EmptyState.tsx
+    bookList.tsx
+
+  routes/
+    __root.tsx
+    index.tsx
+    browse.tsx
+    vault.tsx
+
+books/
+    types.ts
+    data.ts
+    store.ts
+    selectors.ts
+store/
+    store.ts
+main.tsx
+index.css
+index.html
+```
+
+---
+
+## ⚙️ Features
+
+### 📖 Browse Books
+
+* View a list of available books
+* Add books to your vault
+* Prevent duplicate entries
+
+### 📦 Vault Management
+
+* View saved books
+* Update reading status
+* Remove books
+
+### 🔍 Search & Filter
+
+* Search by title, author, or genre
+* Filter by reading status
+
+### 📊 Dashboard
+
+* View reading statistics:
+
+  * Total books
+  * Currently reading
+  * Completed
+
+### 💾 Persistence
+
+* Data stored locally using Zustand persist
+* No backend required
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
+
