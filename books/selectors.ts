@@ -1,4 +1,4 @@
-import { Book } from "./types";
+import type { Book } from "./types";
 
 export const getStats = (vault: Book[]) => {
   const total = vault.length;

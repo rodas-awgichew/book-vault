@@ -1,11 +1,11 @@
-import { Book } from "./types";
+import type { Book } from "./types";
 
 export const BOOKS: Book[] = [
   {
     id: "1",
     title: "Atomic Habits",
     author: "James Clear",
-    coverImage: "https://via.placeholder.com/150",
+    coverImage: "./src/asset/img2.jpg",
     status: "unread",
     pages: 320,
     genre: "Self-help",
@@ -15,7 +15,7 @@ export const BOOKS: Book[] = [
     id: "2",
     title: "Deep Work",
     author: "Cal Newport",
-    coverImage: "https://via.placeholder.com/150",
+    coverImage: "./src/asset/img1.jpg",
     status: "unread",
     pages: 280,
     genre: "Productivity",
@@ -25,7 +25,7 @@ export const BOOKS: Book[] = [
     id: "3",
     title: "Deep Work",
     author: "Cal Newport",
-    coverImage: "https://via.placeholder.com/150",
+    coverImage: "./src/asset/img3.webp",
     status: "unread",
     pages: 240,
     genre: "self-help",
