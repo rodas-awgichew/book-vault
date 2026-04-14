@@ -1,4 +1,4 @@
-import type { Book } from "../../books/types";
+import type { Book, BookStatus } from "../../books/types";
 
 type Props = {
   book: Book;
@@ -36,18 +36,25 @@ export default function BookCard({
           </button>
         )}
 
-        {onStatusChange && (
-          <select
-            value={book.status}
-            onChange={(e) => onStatusChange(e.target.value)}
-            className="bg-slate-700 text-white rounded-md p-1"
-            aria-label="Book status"
-          >
-            <option value="unread">Unread</option>
-            <option value="reading">Reading</option>
-            <option value="completed">Completed</option>
-          </select>
-        )}
+      
+{onStatusChange && (
+  <div className="flex gap-2">
+    {(["unread", "reading", "completed"] as BookStatus[]).map((status) => (
+      <button
+        key={status}
+        onClick={() => onStatusChange(status)}
+        className={`px-3 py-1 rounded-md text-sm
+          ${book.status === status 
+            ? "bg-green-600 text-white" 
+            : "bg-slate-700 text-gray-300 hover:bg-slate-600"}`}
+        aria-label={`Set status to ${status}`}
+      >
+        {status.charAt(0).toUpperCase() + status.slice(1)}
+      </button>
+    ))}
+  </div>
+)}
+
 
         {onRemove && (
           <button
