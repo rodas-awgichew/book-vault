@@ -1,7 +1,7 @@
 import { useBookStore } from "../../store/store";
 import { getStats } from "../../books/selectors";
 import StatsCard from "../components/statusCard";
-import Grouping from "../components/grouping";
+import Grouping from "../components/Grouping";
 
 export default function Home() {
   const vault = useBookStore((s) => s.vault);
