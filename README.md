@@ -48,17 +48,13 @@ Users can:
 * Reading statistics (total, completed, reading) are computed dynamically
 * Avoids redundant and inconsistent state
 
-### 3. Routing as Application State
 
-* Multi-page navigation using TanStack Router
-* Structured route hierarchy for scalability
-
-### 4. Component-Based Architecture
+### 3. Component-Based Architecture
 
 * Reusable UI components (BookCard, SearchBar, FilterBar, etc.)
 * Clear separation of UI and logic
 
-### 5. Data Persistence
+### 4. Data Persistence
 
 * Zustand persist middleware used to store data in localStorage
 * User data remains after page refresh
