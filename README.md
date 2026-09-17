@@ -30,7 +30,7 @@ Users can:
 * **Framework:** React (Vite + TypeScript)
 * **Routing:** TanStack Router
 * **State Management:** Zustand (with persistence)
-* **Styling:** Tailwind CSS (Dark theme UI)
+* **Styling:** Tailwind CSS (Dark theme)
 * **Data Source:** Local static dataset
 
 ---
