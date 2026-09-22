@@ -112,7 +112,7 @@ index.html
 
 ### 🔍 Search & Filter
 
-* Search by title, author, or genre
+* Search by title, author
 * Filter by reading status
 
 ### 📊 Dashboard
