@@ -51,7 +51,7 @@ Users can:
 
 ### 3. Component-Based Architecture
 
-* Reusable UI components (BookCard, SearchBar, FilterBar )
+* Reusable UI components
 * Clear separation of UI and logic
 
 ### 4. Data Persistence
