@@ -16,7 +16,7 @@ The **Personal Book Vault** is a client-side application built to demonstrate mo
 
 Users can:
 
-* Browse a predefined list of books
+* Browse a list of books
 * Add books to a personal vault
 * Update reading status (Unread, Reading, Completed)
 * Remove books from their collection
